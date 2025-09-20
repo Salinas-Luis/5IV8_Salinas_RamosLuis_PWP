@@ -10,26 +10,37 @@ html, body{
 }
 
 .container-main{
-    border: 7px solid #000000;
+    border: 10px solid #423c3c;
     border-radius: 50px;
     margin: 2rem;
     background-color: rgb(38, 38, 39);
 }
 
-nav, section, footer, aside, article{
-    border: 4px solid rgb(38, 38, 39);
+nav, section, footer, article{
+    border: 5px solid rgb(0, 0, 0);
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 1rem;
     text-align: justify;
 }
 
-article, aside{
-    width: 20%;
+article{
+    background-color: beige;
+    width: 45%;
     display: inline-flex;
-    height: 300px;
+
 }
 
 nav, footer, section{
     background-color: darkgray;
 }
+
+article img{
+    width: 30%;
+}
+nav img{
+    width: 10%;
+}
+
+
+
