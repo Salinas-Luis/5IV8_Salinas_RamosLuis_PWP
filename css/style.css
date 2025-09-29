@@ -1,15 +1,79 @@
-*{
-    background-color: rgb(145, 145, 214);
-}
+
 body{
-    background-color: darkcyan;
+    background-color: rgb(0, 0, 0);
+    height: auto;
 }
-header{
-    background-color: cadetblue;
-    border-radius: 30%;
+
+.container-main{
+    background-color: white;
     padding: 1rem;
-    font-size: 30px;
+    border-radius: 20px;
 }
+
+.container-header{
+    background-color: rgb(73, 81, 82);
+    border-radius: 20px;
+    border-color: 10px solid rgb(0, 0, 0);
+    font-size: 2rem;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+table,th,td{
+    border: 2px solid black;
+    padding: 1rem;
+}
+
 table{
+    border-collapse: collapse;
+    font-size: 20px;
     background-color: gray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+}
+
+.container-body p{
+    font-size: 20px;
+}
+
+.container-footer{
+    background-color:rgb(73, 81, 82) ;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1%;
+}
+
+footer a{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: white;
+}
+
+td a{
+    text-decoration: none;
+}
+
+td a:hover{
+    color:white
+}
+
+.container-header img{
+    height: 60px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.container-body p{
+    text-align: center;
 }
