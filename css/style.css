@@ -1,4 +1,15 @@
 *{
-    background-color: rgb(171, 171, 176);
-    font-size: 15px; 
+    background-color: rgb(145, 145, 214);
+}
+body{
+    background-color: darkcyan;
+}
+header{
+    background-color: cadetblue;
+    border-radius: 30%;
+    padding: 1rem;
+    font-size: 30px;
+}
+table{
+    background-color: gray;
 }
