@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de Formulario</title>
     <script src="./Js/validacion.js"></script>
+    <link rel="stylesheet" href="./css/styleformulario.css">
 </head>
 <body>
+           <div class="container-header">
+            <p>Formulario De Prueba</p>
+        </div>
     <div class="container-form">
         <form method="post" id="formulario" name="formulario" onsubmit="return validar(this) ">
             <label for="">Nombre:</label><br>
@@ -15,10 +19,11 @@
             <input type="" id="edad" name="edad" placeholder="Ingresa aqui tu edad"><br>
             <label for="">Email:</label><br>
             <input type="email" id="correo" name="correo" placeholder="Ingresa aqui tu correo"><br>
-            <input type="submit" name="enviar" value="Enviar Registro"><br>
-            <input type="reset" name="borrar" value="Borrar datos"><p></p>
+            <input type="submit" name="enviar" value="Enviar Registro" class="btn_registro"><br>
+            <input type="reset" name="borrar" value="Borrar datos" class="btn_registro"><p></p>
         </form>
     </div>
+    <div class="container-body">
     <p> Todos los formularios en la web, manejan metodos para el envio de las diferentes peticiones que realiza el usuario. Considerando la arquitectura Cliente-Servidor,
          el manejo de las peticiones se hace por medio del protocolo http y actualmente por https, cada peticion debe de ser atendida en un tiempo de respuesta conforme al
           modelo TCP/IP. Los metodos Principales de los formularios son:
@@ -42,5 +47,6 @@
             <ul>Head: Sirve para regresar el codigo de respuesta de cualquier cabecera HTTP asociada a un recurso. </ul>
         </li>
     </p>
+</div>
 </body>
 </html>

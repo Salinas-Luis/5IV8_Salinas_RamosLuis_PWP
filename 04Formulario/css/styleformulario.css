@@ -1,0 +1,40 @@
+body{
+    background-color: #ffffff;
+    color: white;
+}
+.container-form{
+    background-color: #5f9ea0;
+    border-radius: 10px;
+    width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2cqmax;
+    color: black;
+    box-shadow: 5px 5px 10px #00000080;
+}
+.btn_registro{
+    margin-top: 6px;
+}
+.container-body{
+    background-color: #808080;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px #00000080;
+}
+
+.container-header{
+    color: #000000;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px #00000080;
+}
