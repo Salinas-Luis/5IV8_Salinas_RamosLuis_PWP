@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Formulario</title>
+    <script src="./Js/validacion.js"></script>
+</head>
+<body>
+    <div class="container-form">
+        <form method="post" id="formulario" name="formulario" onsubmit="return validar(this) ">
+            <label for="">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa aqui tu nombre"><br>
+            <label for="">Edad:</label><br>
+            <input type="" id="edad" name="edad" placeholder="Ingresa aqui tu edad"><br>
+            <label for="">Email:</label><br>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa aqui tu correo"><br>
+            <input type="submit" name="enviar" value="Enviar Registro"><br>
+            <input type="reset" name="borrar" value="Borrar datos"><p></p>
+        </form>
+    </div>
+    <p> Todos los formularios en la web, manejan metodos para el envio de las diferentes peticiones que realiza el usuario. Considerando la arquitectura Cliente-Servidor,
+         el manejo de las peticiones se hace por medio del protocolo http y actualmente por https, cada peticion debe de ser atendida en un tiempo de respuesta conforme al
+          modelo TCP/IP. Los metodos Principales de los formularios son:
+        <li>
+            <ol>GET: <h1>este metodo se encarga de enviar la informacion del formulario por medio de la salida standard (conocida como url), del navegador, 
+                esto propicia que puedan existir inyecciones de codigo realizando violaciones a la seguridad del sistema.</h1>
+            </ol>
+            <ol>POST: <h1>este metodo se encarga de enviar la informacion para poder registrar un cambio o un nuevo registro dentro del sistema enviandola
+                igual por el metodo estandar, pero mediante un ocultamiento, esto significa que no es visible para el usuario lo que nos ofrece un mayor
+                grado de seguridad en el manejo de la información</h1>
+            </ol>
+        </li>
+    </p>
+    <br>
+    <p>En resumen los metodos son: 
+        <li>
+            <ul>Get: Sirve para enviar y realizar operaciones de lectura o consulta</ul>
+            <ul>Post: Sirve para enviar informacion de un recurso al servidor con el fin de registrarlo</ul>
+            <ul>Delete: Sirve para eliminar un recurso especifico dentro del servidor, obteniendo una respuesta de actualización </ul>
+            <ul>Put: sirve para almacenar la informacion de un recurso particular y conectarse al servicio para realizar la actualización</ul>
+            <ul>Head: Sirve para regresar el codigo de respuesta de cualquier cabecera HTTP asociada a un recurso. </ul>
+        </li>
+    </p>
+</body>
+</html>
