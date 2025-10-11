@@ -111,6 +111,7 @@ function calcularcalificacion(){
     traporcentaje= calitrabajo*15/10;
     }
     }
+
     function borrarp4(){
     document.getElementById("ca1").value = "";
     document.getElementById("ca2").value = "";
@@ -118,7 +119,7 @@ function calcularcalificacion(){
     document.getElementById("caexamen").value = "";
     document.getElementById("catrabajo").value = "";
     document.getElementById("output_textop4").textContent = "Esperando datos...";
-}
+    }
 
 
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
