@@ -5,21 +5,36 @@ function validarn(e){
 
     var codigo = String.fromCharCode(teclado);
     return patron.test(codigo);
-
 }
+
+function validarm(e){ //valida que los meses solo sean numeros enteros sin espacios 
+    var teclado = (document.all)? e.keyCode : e.which;
+    if(teclado == 8) return true;
+    var patron = /[-9\d]/;
+
+    var codigo = String.fromCharCode(teclado);
+    return patron.test(codigo);
+}
+
+
 
  //Funcion para calcular el interes
  //Delimitar numero de decimales
 
 function interes(){
     var valor = document.getElementById("cantidadi").value;
+    var nummeses = document.getElementById("cantidadm").value;
     var parseo = parseFloat(valor);
-    alert(parseo);
-    var interes = parseo*(0.085); //Limite a 2 decimales
-    alert(interes);
-    var total = parseo + interes; //Limite a 2 decimales 
-    alert(total);
-    document.getElementById("saldoi").value = "$ " + total;
+
+    if(nummeses>=1 && nummeses<=18 && parseo>0 ){ //valida que los meses esten entre 1 y 18
+    for(var i=0; i<nummeses; i++){
+        var interes = parseo*0.02.toFixed(2);
+        var parseo= parseo+interes;
+    }
+    document.getElementById("saldoi").value = "$ " + parseo.toFixed(2);
+    }
+    parseo>0 ? "" : alert("Ingrese un numero mayor a 0");
+    nummeses>=1 && nummeses<=18 ? "" : alert("Por favor, Ingrese entre 1 y 18 meses");
 }
 
 function borrari(){
