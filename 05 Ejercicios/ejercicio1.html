@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="./css/styleejercicios.css">
 </head>
 <body>
     <div class="container-problema">
@@ -22,7 +23,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" value="Calcular Interes" name="calculari" onclick="interes()"></td>
+                        <td><input type="button" value="Calcular Interes" name="calculari" onclick="interes()" class="btntabla"></td>
                     </tr>
                     <tr>
                         <td>Su saldo total con el interes es de: </td>
@@ -30,7 +31,7 @@
                     </tr>
                     <tr>
                        <td></td> 
-                       <td><input type="button" value="Borrar Datos" name="borrar" onclick="borrari()"></td>
+                       <td><input type="button" value="Borrar Datos" name="borrar" onclick="borrari()" class="btntabla"></td>
                     </tr>
             </table>
             </div>
@@ -41,14 +42,13 @@
         <p>Ingrese sus sueldo base: </p>
         <input type="text" id="sueldob" onkeypress="return validars(event)">
         <p>Ingrese sus ventas:</p>
-        <ul>
-            <li><input type="text" id="venta1" placeholder="Monto venta 1" onkeypress="return validars(event)"></li>
-            <li><input type="text" id="venta2" placeholder="Monto venta 2" onkeypress="return validars(event)"></li>
-            <li><input type="text" id="venta3" placeholder="Monto venta 3" onkeypress="return validars(event)"></li>
-        </ul>
-        <input type="button" value="Calcular total" onclick="calculartotal()">
+            <input type="text" id="venta1" placeholder="Monto venta 1" onkeypress="return validars(event)"><br>
+            <input type="text" id="venta2" placeholder="Monto venta 2" onkeypress="return validars(event)"><br>
+            <input type="text" id="venta3" placeholder="Monto venta 3" onkeypress="return validars(event)"><br>
+        <input type="button" value="Calcular total" onclick="calculartotal()"><br>
         <input type="button" value="Borrar" onclick="borrarp2()">
         <p id="output_texto"> Esperando datos...</p>
+
     </div>
     <div class="container-problema">
         <h2>Problema 3</h2>
@@ -57,7 +57,7 @@
         <p>Ingrese el precio</p>
         <input type="number" id="preciop" placeholder="Ingrese precio..." onclick="return validarn">
         <p id="output_textop3">Esperando datos...</p>
-        <input type="button" value="Calcula descuento" onclick="calculardescuento()">
+        <input type="button" value="Calcula descuento" onclick="calculardescuento()"><br>
         <input type="button" value="Borrar datos" onclick="borrarp3()">
     </div>
     <div class="container-problema">
@@ -73,6 +73,17 @@
         <p id="output_textop4">Esperando datos...</p>
         <input type="button" value="Calcular calificacion" onclick="calcularcalificacion()"> <br>
         <input type="button" value="Borrar datos" onclick="borrarp4()">
+    </div>
+    <div class="container-problema">
+        <h2>Problema 5</h2>
+        <p>Ingrese la cantidad de Hombres</p>
+        <input type="number" id="numh" placeholder="Hombres.." onkeypress="return validarm(event)">
+        <p>Ingrese la cantidad de mujeres</p>
+        <input type="number" id="numm" placeholder="Mujeres.." onkeypress="return validarm(event)"><br>
+        <p id="output_textop5">Esperando datos...</p>
+        <input type="button" value="Calcular porcentaje por sexo" onclick="calcularporcentaje()"><br>
+        <input type="button" value="Borrar" onclick="borrarp5()">
+
     </div>
     <script src="./js/funcionese1.js"></script>
 </body>

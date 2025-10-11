@@ -82,9 +82,13 @@ function borrarp2(){
 function calculardescuento(){
     var producto = document.getElementById("nombrep").value
     var precio = parseFloat(document.getElementById("preciop").value);
+    if(precio>0){
     var descuento = precio*0.15;
     var preciototal = precio+descuento;
     document.getElementById("output_textop3").innerHTML = "Nombre de producto: " + producto + "<br>" + "Precio: $" + precio + "<br>" + "Descuento: $" + descuento + "<br>" + "Precio final: $" + preciototal;
+    }else{
+        alert("Ingrese un numero mayor a 0 por favor")
+    }
 }
 
 function borrarp3(){
@@ -102,15 +106,35 @@ function calcularcalificacion(){
     var parcialesporcentaje=0;
     var exaporcentaje =0;
     var traporcentaje=0;
-    parciales.every(e => e>0 && e<=10) ? "" : alert("Ingrese las calificaciones de 0 a 10 en los parciales");
-    caliexa >= 0 && caliexa <= 10 ? "" : alert("Ingrese una calificación de 0 a 10 en el examen");
-    calitrabajo>=0 && calitrabajo<=10 ? "" : alert("Ingrese una calificacion de 0 a 10 en el trabajo");
+
     if(caliexa>0 && caliexa<=10 && calitrabajo>0 && calitrabajo<=10 && parciales.every(e => e>0 && e<=10)){
     parcialesporcentaje = (parciales[0]+parciales[1]+parciales[2]*55)/30;
     exaporcentaje= caliexa*30/10;
     traporcentaje= calitrabajo*15/10;
+    alert(exaporcentaje);
+    alert(traporcentaje);
+    alert(parcialesporcentaje);
+    }else{
+        if(parciales.every(e => e>=!0 && e<=!10)){
+        alert("Ingrese las calificaciones de 0 a 10 en los parciales");
+        }else{
+            if(caliexa >=! 0 && caliexa <=! 10){
+            alert("Ingrese una calificación de 0 a 10 en el examen");
+        }else{
+                if(calitrabajo>=!0 && calitrabajo<=!10){
+                alert("Ingrese una calificacion de 0 a 10 en el trabajo");
+            }
+        }
+        }
     }
-    }
+}
+
+
+
+
+
+
+        
 
     function borrarp4(){
     document.getElementById("ca1").value = "";
@@ -122,6 +146,33 @@ function calcularcalificacion(){
     }
 
 
+    //PROBLEMA 5 JS
+
+    function calcularporcentaje(){
+        var numhombres = parseFloat(document.getElementById("numh").value);
+        var nummujeres = parseFloat(document.getElementById("numm").value);
+        var totalpersonas=0;
+        var porcentajehombres=0;
+        var porcentajemujeres=0;
+        if(numhombres>=0 && nummujeres>=0){
+            totalpersonas=nummujeres+numhombres;
+            porcentajehombres=(numhombres/totalpersonas)*100;
+            porcentajemujeres=(nummujeres/totalpersonas)*100;
+            document.getElementById("output_textop5").innerHTML= "Porcentaje de hombres: " + porcentajehombres + "%" + "<br>" + "Porcentaje Mujeres: "+ porcentajemujeres + "%"
+        }else{
+            if(numhombres<0){
+                alert("Ingrese un numero mayor a 0 en los hombres")
+            }
+            if(nummujeres<0){
+             alert("Ingrese un numero mayor a 0 en las mujeres")
+            }
+        }
+    }
+    function borrarp5(){
+        document.getElementById("numh").value = "";
+        document.getElementById("numm").value= "";
+        document.getElementById("output_textop5").textContent = "Esperando datos...";
+    }
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
 /*EJ 2: Se deben ingresar 3 ventas, un sueldo base y despues calcular el monto total, debe de aparecer cuanto cobra por comision y la suma total*/
 /*EJ 3: Se debe ingresar un producto, con su precio y aplicarle el 15% y el sistema debe mostrar el producto, el precio, descuento, total a pagar*/
