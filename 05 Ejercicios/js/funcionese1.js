@@ -1,3 +1,4 @@
+//PROBLEMA 1 JS
 function validarn(e){
     var teclado = (document.all)? e.keyCode : e.which;
     if(teclado == 8) return true;
@@ -10,16 +11,11 @@ function validarn(e){
 function validarm(e){ //valida que los meses solo sean numeros enteros sin espacios 
     var teclado = (document.all)? e.keyCode : e.which;
     if(teclado == 8) return true;
-    var patron = /[-9\d]/;
+    var patron = /[0-9\d]/;
 
     var codigo = String.fromCharCode(teclado);
     return patron.test(codigo);
 }
-
-
-
- //Funcion para calcular el interes
- //Delimitar numero de decimales
 
 function interes(){
     var valor = document.getElementById("cantidadi").value;
@@ -41,6 +37,45 @@ function borrari(){
     document.getElementById("cantidadi").value = "";
     document.getElementById("saldoi").value = "";
 }
+
+
+
+
+//PROBLEMA 2 JS
+
+function validars(e){
+    var teclado = (document.all) ? e.keyCode : e.which;
+    if(teclado == 8) return true;
+    var regex = /[0-9\d.]/
+    var codigo = String.fromCharCode(teclado);
+    return regex.test(codigo);
+}
+
+function calculartotal(){
+    var sueldobase= parseFloat(document.getElementById("sueldob").value);
+    var totalcomision =0;
+    const ventas= [parseFloat(document.getElementById("venta1").value),parseFloat(document.getElementById("venta2").value),parseFloat(document.getElementById("venta3").value)];
+    const ventasc = [];
+    for (var i=0; i<ventas.length; i++){
+        ventasc[i]=ventas[i]*0.1;
+        totalcomision = ventasc[i] + totalcomision; //total de las 3 comisiones
+    }
+    var sueldototal = sueldobase + totalcomision;
+    document.getElementById("output_texto").innerHTML= "Comision por ventas: " + "<br>" + " Venta 1: $" + ventasc[0] + "<br>" + " Venta 2: $" + ventasc[1] + "<br>" + " Venta 3: $" + ventasc[2] + "<br>" + " Sueldo total: $" + sueldototal;
+}
+
+function borrarp2(){
+    document.getElementById("sueldob").value = "";
+    document.getElementById("venta1").value = "";
+    document.getElementById("venta2").value = "";
+    document.getElementById("venta3").value = "";
+    document.getElementById("output_texto").textContent = "Esperando datos...";
+}
+
+//PROBLEMA 3 JS
+
+
+
 
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
 /*EJ 2: Se deben ingresar 3 ventas, un sueldo base y despues calcular el monto total, debe de aparecer cuanto cobra por comision y la suma total*/

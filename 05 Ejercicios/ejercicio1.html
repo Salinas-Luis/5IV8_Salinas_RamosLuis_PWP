@@ -6,7 +6,8 @@
     <title>Ejercicio 1</title>
 </head>
 <body>
-    <div class="container-problema1">
+    <div class="container-problema">
+        <h2>Problema 1</h2>
         <form method="post" name="formulario" action="">
             <label for="">Formulario para calculo de inversiones banco kawaii con un incremento del 2% mensual</label><br>
             <div class="container-table">
@@ -35,6 +36,21 @@
             </div>
         </form>
     </div>
+    <div class="container-problema">
+        <h2>Problema 2</h2>
+        <p>Ingrese sus sueldo base: </p>
+        <input type="text" id="sueldob" onkeypress="return validars(event)">
+        <p>Ingrese sus ventas:</p>
+        <ul>
+            <li><input type="text" id="venta1" placeholder="Monto venta 1" onkeypress="return validars(event)"></li>
+            <li><input type="text" id="venta2" placeholder="Monto venta 2" onkeypress="return validars(event)"></li>
+            <li><input type="text" id="venta3" placeholder="Monto venta 3" onkeypress="return validars(event)"></li>
+        </ul>
+        <input type="button" value="Calcular total" onclick="calculartotal()">
+        <input type="button" value="Borrar" onclick="borrarp2()">
+        <p id="output_texto"> Esperando datos...</p>
+    </div>
+    
     <script src="./js/funcionese1.js"></script>
 </body>
 </html>
