@@ -36,6 +36,7 @@ function interes(){
 function borrari(){
     document.getElementById("cantidadi").value = "";
     document.getElementById("saldoi").value = "";
+    document.getElementById("cantidadm").value="";
 }
 
 
@@ -56,12 +57,16 @@ function calculartotal(){
     var totalcomision =0;
     const ventas= [parseFloat(document.getElementById("venta1").value),parseFloat(document.getElementById("venta2").value),parseFloat(document.getElementById("venta3").value)];
     const ventasc = [];
+    if(sueldobase>0 && ventas.every(e => e>0)){
     for (var i=0; i<ventas.length; i++){
         ventasc[i]=ventas[i]*0.1;
         totalcomision = ventasc[i] + totalcomision; //total de las 3 comisiones
     }
     var sueldototal = sueldobase + totalcomision;
     document.getElementById("output_texto").innerHTML= "Comision por ventas: " + "<br>" + " Venta 1: $" + ventasc[0] + "<br>" + " Venta 2: $" + ventasc[1] + "<br>" + " Venta 3: $" + ventasc[2] + "<br>" + " Sueldo total: $" + sueldototal;
+    }
+    sueldobase>0 ? "" : alert("Ingrese un sueldo mayor a 0");
+    ventas.every(e => e>0) ? "" : alert("Verifique que todos los montos de venta sean mayor a 0");
 }
 
 function borrarp2(){
@@ -74,7 +79,19 @@ function borrarp2(){
 
 //PROBLEMA 3 JS
 
+function calculardescuento(){
+    var producto = document.getElementById("nombrep").value
+    var precio = parseFloat(document.getElementById("preciop").value);
+    var descuento = precio*0.15;
+    var preciototal = precio+descuento;
+    document.getElementById("output_textop3").innerHTML = "Nombre de producto: " + producto + "<br>" + "Precio: $" + precio + "<br>" + "Descuento: $" + descuento + "<br>" + "Precio final: $" + preciototal;
+}
 
+function borrarp3(){
+    document.getElementById("nombrep").value = "";
+    document.getElementById("preciop").value = "";
+    document.getElementById("output_textop3").textContent = "Esperando datos...";
+}
 
 
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
