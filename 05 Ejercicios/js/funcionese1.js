@@ -94,6 +94,33 @@ function borrarp3(){
 }
 
 
+//PROBLEMA 4 JS
+function calcularcalificacion(){
+    const parciales = [parseFloat(document.getElementById("ca1").value),parseFloat(document.getElementById("ca2").value),parseFloat(document.getElementById("ca3").value)]
+    var caliexa = parseFloat(document.getElementById("caexamen"));
+    var calitrabajo = parseFloat(document.getElementById("catrabajo"));
+    var parcialesporcentaje=0;
+    var exaporcentaje =0;
+    var traporcentaje=0;
+    parciales.every(e => e>0 && e<=10) ? "" : alert("Ingrese las calificaciones de 0 a 10 en los parciales");
+    caliexa >= 0 && caliexa <= 10 ? "" : alert("Ingrese una calificación de 0 a 10 en el examen");
+    calitrabajo>=0 && calitrabajo<=10 ? "" : alert("Ingrese una calificacion de 0 a 10 en el trabajo");
+    if(caliexa>0 && caliexa<=10 && calitrabajo>0 && calitrabajo<=10 && parciales.every(e => e>0 && e<=10)){
+    parcialesporcentaje = (parciales[0]+parciales[1]+parciales[2]*55)/30;
+    exaporcentaje= caliexa*30/10;
+    traporcentaje= calitrabajo*15/10;
+    }
+    }
+    function borrarp4(){
+    document.getElementById("ca1").value = "";
+    document.getElementById("ca2").value = "";
+    document.getElementById("ca3").value = "";
+    document.getElementById("caexamen").value = "";
+    document.getElementById("catrabajo").value = "";
+    document.getElementById("output_textop4").textContent = "Esperando datos...";
+}
+
+
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
 /*EJ 2: Se deben ingresar 3 ventas, un sueldo base y despues calcular el monto total, debe de aparecer cuanto cobra por comision y la suma total*/
 /*EJ 3: Se debe ingresar un producto, con su precio y aplicarle el 15% y el sistema debe mostrar el producto, el precio, descuento, total a pagar*/
