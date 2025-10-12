@@ -11,9 +11,10 @@
             <h2 class="problema-title"> Problema 1 </h2>
             <h3>Dada una lista de palabras separadas por un espacio, invierte el orden de dichas palabras. Las palabras pueden estar separadas unicamente por espacios</h3>
             <div class="problema-content">
-                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por un espacio: " id="p1-input">
-                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="">Invertir Palabras</button>
-                <pre class="problema-output" id="p1-output">Esperando datos...</pre>
+                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por un espacio: " id="p1_input" onkeypress="return validarl(event)"><br>
+                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="invertirpalabras()">Invertir Palabras</button><br>
+                 <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="borrarp1()">Borrar</button>
+                <pre class="problema-output" id="p1_output">Esperando datos...</pre>
             </div>
         </div>
     </div>
@@ -100,11 +101,12 @@
             Ejemplo: Casa = 3 (c,a,s), Perro= 4  (p,e,r,o)<br>
             Considera solamente el alfabeto A-Z en mayusculas, las palabras ingresadas deberan estar separadas por una coma, no se aceptan espacios</h3>
             <div class="problema-content">
-                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por una coma: " id="p3-input">
-                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="">Calcular Palabras</button>
-                <pre class="problema-output" id="p3-output">Esperando datos...</pre>
+                <input type="text" class="problema-input" placeholder="Ingresa las palabras separadas por una coma: " id="p3_input" onkeypress="return validarl2(event)">
+                <button type="button" class="problema-button" style="margin-top: 1rem;" onclick="calcularcu()">Calcular Palabras</button>
+                <pre class="problema-output" id="p3_output">Esperando datos...</pre>
             </div>
         </div>
     </div>
+    <script src="./js/algoritmia.js"></script>
 </body>
 </html>
