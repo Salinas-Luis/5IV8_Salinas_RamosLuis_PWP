@@ -102,19 +102,25 @@ function borrarp3(){
 
 function calcularcalificacion(){
     const parciales = [parseFloat(document.getElementById("ca1").value),parseFloat(document.getElementById("ca2").value),parseFloat(document.getElementById("ca3").value)]
-    var caliexa = parseFloat(document.getElementById("caexamen"));
-    var calitrabajo = parseFloat(document.getElementById("catrabajo"));
+    var caliexa = parseFloat(document.getElementById("caexamen").value);
+    var calitrabajo = parseFloat(document.getElementById("catrabajo").value);
     var parcialesporcentaje=0;
-    var exaporcentaje =0;
+    var exaporcentaje=0;
     var traporcentaje=0;
+    var cafinal=0;
 
     if(caliexa>=0 && caliexa<=10 && calitrabajo>=0 && calitrabajo<=10 && parciales.every(e => e>=0 && e<=10)){
-    parcialesporcentaje = (parciales[0]+parciales[1]+parciales[2]*55)/30;
-    exaporcentaje= caliexa*30/10;
-    traporcentaje= calitrabajo*15/10;
-    alert(exaporcentaje);
-    alert(traporcentaje);
-    alert(parcialesporcentaje);
+    parcialesporcentaje = parseFloat((parciales[0]+parciales[1]+parciales[2])*55/30);
+    exaporcentaje= parseFloat(caliexa*30/10);
+    traporcentaje= parseFloat(calitrabajo*15/10);
+    cafinal=parcialesporcentaje+exaporcentaje+traporcentaje;
+    document.getElementById("output_textop4").innerHTML="Sumatoria final: "  + "<br>" + "Parciales: " + parcialesporcentaje + "%" + "<br>" + "Examen: " + exaporcentaje + "%" + "<br>" + "Trabajo final: " + traporcentaje + "%" + "<br>" + "Calificacion final: " + cafinal + "%"
+    }
+    else{
+       parciales.every(e => e>=0 && e<=10)? "" : alert("Ingrese una calificacion de 0 a 10 en los parciales") 
+       caliexa>=0 && caliexa<=10 ? "" : alert("Ingrese una calificacion de 0 a 10 en el examen") 
+       calitrabajo>=0 && calitrabajo<=10 ? "" : alert("Ingrese una calificacion de 0 a 10 en el trabajo") 
+       
     }
 }
 
