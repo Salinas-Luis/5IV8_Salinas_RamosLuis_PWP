@@ -13,7 +13,20 @@
     margin-bottom: 20px;
     margin-top: 50px;
 }
-
+.container-problema1{
+    background-color: #f2eae6;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px #00000080;
+    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
 .container-table{
     display: flex;
     justify-content: center;
@@ -73,4 +86,9 @@ footer a{
 
 footer a:hover{
     color: #4299e1; 
+}
+
+.container-header{
+    display: flex;
+    justify-content: center;
 }
