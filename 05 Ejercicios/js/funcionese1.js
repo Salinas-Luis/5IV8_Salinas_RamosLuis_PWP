@@ -99,6 +99,7 @@ function borrarp3(){
 
 
 //PROBLEMA 4 JS
+
 function calcularcalificacion(){
     const parciales = [parseFloat(document.getElementById("ca1").value),parseFloat(document.getElementById("ca2").value),parseFloat(document.getElementById("ca3").value)]
     var caliexa = parseFloat(document.getElementById("caexamen"));
@@ -107,34 +108,15 @@ function calcularcalificacion(){
     var exaporcentaje =0;
     var traporcentaje=0;
 
-    if(caliexa>0 && caliexa<=10 && calitrabajo>0 && calitrabajo<=10 && parciales.every(e => e>0 && e<=10)){
+    if(caliexa>=0 && caliexa<=10 && calitrabajo>=0 && calitrabajo<=10 && parciales.every(e => e>=0 && e<=10)){
     parcialesporcentaje = (parciales[0]+parciales[1]+parciales[2]*55)/30;
     exaporcentaje= caliexa*30/10;
     traporcentaje= calitrabajo*15/10;
     alert(exaporcentaje);
     alert(traporcentaje);
     alert(parcialesporcentaje);
-    }else{
-        if(parciales.every(e => e>=!0 && e<=!10)){
-        alert("Ingrese las calificaciones de 0 a 10 en los parciales");
-        }else{
-            if(caliexa >=! 0 && caliexa <=! 10){
-            alert("Ingrese una calificación de 0 a 10 en el examen");
-        }else{
-                if(calitrabajo>=!0 && calitrabajo<=!10){
-                alert("Ingrese una calificacion de 0 a 10 en el trabajo");
-            }
-        }
-        }
     }
 }
-
-
-
-
-
-
-        
 
     function borrarp4(){
     document.getElementById("ca1").value = "";
@@ -172,6 +154,37 @@ function calcularcalificacion(){
         document.getElementById("numh").value = "";
         document.getElementById("numm").value= "";
         document.getElementById("output_textop5").textContent = "Esperando datos...";
+    }
+
+    //PROBLEMA 6 JS
+
+    function calcularedad(){
+        const fechanacimiento = document.getElementById("fechanacimiento").value
+        const fechanacimientobjeto = new Date(fechanacimiento);
+        const mes = fechanacimientobjeto.getUTCMonth() + 1;
+        const año = parseFloat(fechanacimientobjeto.getUTCFullYear());
+        const dia = fechanacimientobjeto.getUTCDate();
+        const fechaactual = new Date();
+        const mesactual= fechaactual.getUTCMonth()+1;
+        const añoactual= parseFloat(fechaactual.getUTCFullYear());
+        const diaactual= fechaactual.getUTCDate();
+        var edad=0;
+        if((añoactual-año)<122 && año<añoactual){ //La maxima edad que ha logrado la humanidad son 122 años
+            edad=añoactual-año;
+            if(mesactual<mes || messactual===mes && diaactual < dia){
+                edad=edad-1;
+            }
+            document.getElementById("output_textop6").innerHTML="La edad que tienes es: " + edad + " años"
+        }else{
+            if(año>añoactual){alert("Ingrese un año pasado, no posterior")}else{
+                if((añoactual-año)>=122){alert("Ingrese una edad inferior a 122 años")}
+            }
+        }
+    }
+
+    function borrarp6(){
+        document.getElementById("fechanacimiento").value="";
+        document.getElementById("output_textop6").textContent = "Esperando datos...";
     }
 /*Del ejercicio 1, tenemos que agregar el campo numero de meses y sera una inversion de maximo 18 meses*/
 /*EJ 2: Se deben ingresar 3 ventas, un sueldo base y despues calcular el monto total, debe de aparecer cuanto cobra por comision y la suma total*/
