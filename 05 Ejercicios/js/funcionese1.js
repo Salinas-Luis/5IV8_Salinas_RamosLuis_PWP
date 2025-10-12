@@ -63,7 +63,7 @@ function calculartotal(){
         totalcomision = ventasc[i] + totalcomision; //total de las 3 comisiones
     }
     var sueldototal = sueldobase + totalcomision;
-    document.getElementById("output_texto").innerHTML= "Comision por ventas: " + "<br>" + " Venta 1: $" + ventasc[0] + "<br>" + " Venta 2: $" + ventasc[1] + "<br>" + " Venta 3: $" + ventasc[2] + "<br>" + " Sueldo total: $" + sueldototal;
+    document.getElementById("output_texto").innerHTML= "Comision por ventas: " + "<br>" + " Venta 1: $" + ventasc[0].toFixed(2) + "<br>" + " Venta 2: $" + ventasc[1].toFixed(2) + "<br>" + " Venta 3: $" + ventasc[2].toFixed(2) + "<br>" + " Sueldo total: $" + sueldototal.toFixed(2);
     }
     sueldobase>0 ? "" : alert("Ingrese un sueldo mayor a 0");
     ventas.every(e => e>0) ? "" : alert("Verifique que todos los montos de venta sean mayor a 0");
@@ -84,8 +84,8 @@ function calculardescuento(){
     var precio = parseFloat(document.getElementById("preciop").value);
     if(precio>0){
     var descuento = precio*0.15;
-    var preciototal = precio+descuento;
-    document.getElementById("output_textop3").innerHTML = "Nombre de producto: " + producto + "<br>" + "Precio: $" + precio + "<br>" + "Descuento: $" + descuento + "<br>" + "Precio final: $" + preciototal;
+    var preciototal = precio-descuento;
+    document.getElementById("output_textop3").innerHTML = "Nombre de producto: " + producto + "<br>" + "Precio: $" + precio.toFixed(2) + "<br>" + "Descuento: $" + descuento.toFixed(2) + "<br>" + "Precio final: $" + preciototal.toFixed(2);
     }else{
         alert("Ingrese un numero mayor a 0 por favor")
     }
@@ -114,7 +114,7 @@ function calcularcalificacion(){
     exaporcentaje= parseFloat(caliexa*30/10);
     traporcentaje= parseFloat(calitrabajo*15/10);
     cafinal=parcialesporcentaje+exaporcentaje+traporcentaje;
-    document.getElementById("output_textop4").innerHTML="Sumatoria final: "  + "<br>" + "Parciales: " + parcialesporcentaje + "%" + "<br>" + "Examen: " + exaporcentaje + "%" + "<br>" + "Trabajo final: " + traporcentaje + "%" + "<br>" + "Calificacion final: " + cafinal + "%"
+    document.getElementById("output_textop4").innerHTML="Sumatoria final: "  + "<br>" + "Parciales: " + parcialesporcentaje.toFixed(2) + "%" + "<br>" + "Examen: " + exaporcentaje.toFixed(2) + "%" + "<br>" + "Trabajo final: " + traporcentaje.toFixed(2) + "%" + "<br>" + "Calificacion final: " + cafinal.toFixed(2) + "%"
     }
     else{
        parciales.every(e => e>=0 && e<=10)? "" : alert("Ingrese una calificacion de 0 a 10 en los parciales") 
@@ -146,7 +146,7 @@ function calcularcalificacion(){
             totalpersonas=nummujeres+numhombres;
             porcentajehombres=(numhombres/totalpersonas)*100;
             porcentajemujeres=(nummujeres/totalpersonas)*100;
-            document.getElementById("output_textop5").innerHTML= "Porcentaje de hombres: " + porcentajehombres + "%" + "<br>" + "Porcentaje Mujeres: "+ porcentajemujeres + "%"
+            document.getElementById("output_textop5").innerHTML= "Porcentaje de hombres: " + porcentajehombres.toFixed(2) + "%" + "<br>" + "Porcentaje Mujeres: "+ porcentajemujeres.toFixed(2) + "%"
         }else{
             if(numhombres<0){
                 alert("Ingrese un numero mayor a 0 en los hombres")
