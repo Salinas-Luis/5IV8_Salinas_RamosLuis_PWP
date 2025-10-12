@@ -173,17 +173,24 @@ function calcularcalificacion(){
         const fechaactual = new Date();
         const mesactual= fechaactual.getUTCMonth()+1;
         const añoactual= parseFloat(fechaactual.getUTCFullYear());
-        const diaactual= fechaactual.getUTCDate();
+        const diaactual= fechaactual.getUTCDate()-1;
         var edad=0;
         if((añoactual-año)<122 && año<añoactual){ //La maxima edad que ha logrado la humanidad son 122 años
             edad=añoactual-año;
-            if(mesactual<mes || messactual===mes && diaactual < dia){
+            if(mesactual<mes || mes===mesactual && dia < diaactual){
                 edad=edad-1;
+            }
+            if(dia==diaactual && mes==mesactual){
+                edad=añoactual-año;
             }
             document.getElementById("output_textop6").innerHTML="La edad que tienes es: " + edad + " años"
         }else{
             if(año>añoactual){alert("Ingrese un año pasado, no posterior")}else{
-                if((añoactual-año)>=122){alert("Ingrese una edad inferior a 122 años")}
+                if((añoactual-año)>=122){alert("Ingrese una edad inferior a 122 años")}else{
+                    if(año==añoactual && mes<=mesactual  && dia <= diaactual ){document.getElementById("output_textop6").innerHTML="La edad que tienes es: 0 años"}else{
+                     if(año==añoactual && mes>mesactual  && dia > diaactual ){alert("Fecha invalida")}
+                 }
+                }
             }
         }
     }
