@@ -54,4 +54,23 @@ input[type="button"]{
     border-radius: 10px;
 }
 
+footer{
+    background-color: #f2eae6;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px #00000080;
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+footer a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer a:hover{
+    color: #4299e1; 
+}
