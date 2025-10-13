@@ -41,7 +41,6 @@ function calcularcu(){
     var palabraaprobar = "";
     var contador = 0;
     var arreglocontadorcaracteresunicos = [];
-    alert(arreglopalabras)
     if(palabrasingresadas.includes(" ")){
         alert("Por favor, no ingrese espacios")
     }else{
@@ -63,7 +62,6 @@ function calcularcu(){
             arreglocontadorcaracteresunicos.push(contador); 
             contador=0;
         }
-        alert(arreglocontadorcaracteresunicos)
         contador = Math.max(...arreglocontadorcaracteresunicos);
         contador = arreglocontadorcaracteresunicos.indexOf(contador);
         document.getElementById("p3_output").innerHTML = "La palabra que tiene mas caracteres unicos es: " + arreglopalabras[contador];
