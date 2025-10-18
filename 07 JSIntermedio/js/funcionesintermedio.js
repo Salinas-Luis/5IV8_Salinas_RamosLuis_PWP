@@ -65,7 +65,7 @@ if(razasDePerros.find(raza=> raza === "Chihuahua")){
     razasDePerros.push("Chihuahua");
     console.log(razasDePerros);
 }
-*/ 
+
 const razasDePerros = [
     "Pastor Alemanl",
     "Labrador Retriever",
@@ -86,6 +86,38 @@ if(indiceChihuahua > -1){
     razasDePerros[indiceChihuahua] += "Es una raza de perros chiquita y chillona"
     console.log(razasDePerros[indiceChihuahua])
     console.log(razasDePerros)
+}
+
+*/ 
+
+//Problema 1:
+function validarn(e){
+    var teclado = (document.all) ? e.keycode : e.which
+    if(teclado === 8) return true;
+    var regex = /[0-9\d.]/
+    var codigo = String.fromCharCode(teclado);
+    return regex.test(codigo);
+}
+
+function problema1(){
+    var num1 = parseFloat(document.getElementById("n1").value);
+    var num2 = parseFloat(document.getElementById("n2").value);
+    var resultado=0;
+    if(num1===num2){
+      resultado = num1*num2  
+    }else{
+    num1>num2 ? resultado = num1-num2 : resultado = num1+num2
+    }
+    document.getElementById("output_p1").textContent = "El resultado es: " + resultado
+}
+
+function problema2(){
+    var num1 = parseFloat(document.getElementById("n1_p2").value);
+    var num2 = parseFloat(document.getElementById("n2_p2").value);
+    var num3 = parseFloat(document.getElementById("n3_p2").value);
+    var arreglonums = [num1,num2,num3];
+    var resultado = Math.max(...arreglonums)
+    document.getElementById("output_p2").textContent = "El numero mayor es: " + resultado
 }
 
 
