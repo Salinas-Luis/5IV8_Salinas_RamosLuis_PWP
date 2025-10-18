@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Intermedio</title>
+    <link rel="stylesheet" href="./css/stylejsintermedio.css">
 </head>
 <body>
     <div class="container-header">
@@ -15,7 +16,7 @@
         <label for="">Ingrese 2 numeros:</label><br>
         <input type="text" class="input_problemas" placeholder="Numero 1" onkeypress="return validarn(event)" id="n1"> <br>
         <input type="text" class="input_problemas" placeholder="Numero 2" onkeypress="return validarn(event)" id="n2"> <br>
-        <button onclick="problema1()">Calcular</button>
+        <button onclick="problema1()" id="btn1">Calcular</button>
         <p id="output_p1" class="output_problemas">Esperando datos...</p>
         </div>
         <div class="container-problema">
@@ -36,7 +37,7 @@
         <p class="output_problemas" id="output_p3">Esperando datos...</p>
         </div>
         <div class="container-problema">
-        <h3>Problema 3</h3>
+        <h3>Problema 4</h3>
         <label for="">Ingrese su sueldo mensual y la cantidad de meses que lleva trabajando</label><br>
         <input type="text" class="input_problemas" id="sueldobp4" placeholder="Sueldo base" onkeypress="return validarn(event)"><br>
         <input type="text" class="input_problemas" id="nmeses" placeholder="Numero de meses" onkeypress="return validarne(event)"><br>
@@ -44,7 +45,9 @@
         <p class="output_problemas" id="output_p4">Esperando datos...</p>
         </div>
         <div class="container-footer">
-
+        <footer>
+        <a href="../index.html">Volver al menu</a>
+        </footer>  
         </div>
     </div>
     <script src="./js/funcionesintermedio.js"></script>
