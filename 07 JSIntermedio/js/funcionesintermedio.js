@@ -131,19 +131,41 @@ function validarne(e){
 function problema3(){
     var sueldobase = parseFloat(document.getElementById("sueldob").value)
     var horas = parseFloat(document.getElementById("horasb").value)
-    var horasextra = horas-40;
     var total=0;
-    if(horasextra>0){
+    if(horas-40>0){
         total= sueldobase*40
         if(horas-48>0){
             var horaspor3 = horas-48
             total = total + horaspor3*(sueldobase*3) + 8*(sueldobase*2);
         }
-        if(horasextra > 0 && horasextra<=8){
-            total = total + horasextra*(sueldobase*2);
+        if(horas-40 > 0 && horas-40<=8){
+            total = total + (horas-40)*(sueldobase*2);
         }
     }else{
         total = horas*sueldobase;
     }
     document.getElementById("output_p3").textContent = "Su sueldo final es: " + total
+}
+
+function problema4(){
+    var nummeses = parseFloat(document.getElementById("nmeses").value)
+    var sueldobase = parseFloat(document.getElementById("sueldobp4").value)
+    var tiempoempresa = nummeses/12;
+    var utilidadanual =0;
+    if(tiempoempresa<1){
+        utilidadanual = sueldobase*0.05;
+    }
+    if(tiempoempresa>=1 && tiempoempresa<2){
+        utilidadanual = sueldobase*0.07;
+    }
+    if(tiempoempresa>=2 && tiempoempresa<5){
+        utilidadanual = sueldobase*0.1;
+    }
+    if(tiempoempresa>=5 && tiempoempresa<10){
+        utilidadanual = sueldobase*0.15;
+    }
+    if(tiempoempresa>=10){
+        utilidadanual = sueldobase*0.2;
+    }
+    document.getElementById("output_p4").textContent = "Su reparto de utilidad anual es: " + utilidadanual.toFixed(2)
 }
