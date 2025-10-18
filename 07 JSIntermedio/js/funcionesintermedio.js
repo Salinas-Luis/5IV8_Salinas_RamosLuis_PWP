@@ -108,7 +108,7 @@ function problema1(){
     }else{
     num1>num2 ? resultado = num1-num2 : resultado = num1+num2
     }
-    document.getElementById("output_p1").textContent = "El resultado es: " + resultado
+    document.getElementById("output_p1").textContent = "El resultado es: " + resultado.toFixed(2)
 }
 
 function problema2(){
@@ -117,7 +117,7 @@ function problema2(){
     var num3 = parseFloat(document.getElementById("n3_p2").value);
     var arreglonums = [num1,num2,num3];
     var resultado = Math.max(...arreglonums)
-    document.getElementById("output_p2").textContent = "El numero mayor es: " + resultado
+    document.getElementById("output_p2").textContent = "El numero mayor es: " + resultado.toFixed(2);
 }
 
 function validarne(e){
@@ -144,7 +144,7 @@ function problema3(){
     }else{
         total = horas*sueldobase;
     }
-    document.getElementById("output_p3").textContent = "Su sueldo final es: " + total
+    document.getElementById("output_p3").textContent = "Su sueldo final es: " + total.toFixed(2)
 }
 
 function problema4(){
