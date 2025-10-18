@@ -120,4 +120,30 @@ function problema2(){
     document.getElementById("output_p2").textContent = "El numero mayor es: " + resultado
 }
 
+function validarne(e){
+    var teclado = document.all ? e.keycode : e.which;
+    if(teclado === 8) return true;
+    var regex = /[0-9\d]/
+    var codigo = String.fromCharCode(teclado);
+    return regex.test(codigo)
+}
 
+function problema3(){
+    var sueldobase = parseFloat(document.getElementById("sueldob").value)
+    var horas = parseFloat(document.getElementById("horasb").value)
+    var horasextra = horas-40;
+    var total=0;
+    if(horasextra>0){
+        total= sueldobase*40
+        if(horas-48>0){
+            var horaspor3 = horas-48
+            total = total + horaspor3*(sueldobase*3) + 8*(sueldobase*2);
+        }
+        if(horasextra > 0 && horasextra<=8){
+            total = total + horasextra*(sueldobase*2);
+        }
+    }else{
+        total = horas*sueldobase;
+    }
+    document.getElementById("output_p3").textContent = "Su sueldo final es: " + total
+}
