@@ -143,8 +143,8 @@ function intercambiarPosiciones(fila1, columna1,fila2, columna2){
 
 }
 function intercambiarPosicionesDOM(idPieza1,idPieza2){
-    var pieza1  = document.getElementById(idPieza1);
-    var pieza1  = document.getElementById(idPieza2);
+    var elementoPieza1  = document.getElementById(idPieza1);
+    var elementoPieza2  = document.getElementById(idPieza2);
 
     var padre = elementoPieza1.parentNode;
     var clonElemento1 = elementoPieza1.cloneNode(true);
