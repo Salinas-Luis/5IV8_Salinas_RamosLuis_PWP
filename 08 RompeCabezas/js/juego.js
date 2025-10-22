@@ -182,7 +182,7 @@ function mezclarPiezas(veces){
         return;
     }
     var direcciones = [codigosDireccion.ABAJO,codigosDireccion.ARRIBA,codigosDireccion.IZQUIERDA,codigosDireccion.DERECHA]
-    var direccion = direcciones[Math.floor(Math.random() * direcciones.length())];
+    var direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
 
     moverEnDireccion(direccion);
     setTimeout(function(){
