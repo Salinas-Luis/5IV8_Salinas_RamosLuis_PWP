@@ -109,16 +109,16 @@ function moverEnDireccion(direccion){
     var nuevaColumnaPiezaVacia;
 
     //Si se mueve
-    if(direccion === codigosDireccion.ABAJO()){
+    if(direccion === codigosDireccion.ABAJO){
         nuevaFilaPiezaVacia = filaVacia + 1;
         nuevaColumnaPiezaVacia = columnaVacia;
-    }else if(direccion === codigosDireccion.ARRIBA()){
+    }else if(direccion === codigosDireccion.ARRIBA){
         nuevaFilaPiezaVacia = filaVacia - 1;
         nuevaColumnaPiezaVacia = columnaVacia;        
-    }else if(direccion === codigosDireccion.DERECHA()){
+    }else if(direccion === codigosDireccion.DERECHA){
         nuevaFilaPiezaVacia = filaVacia;
         nuevaColumnaPiezaVacia = columnaVacia + 1;        
-    }else if(direccion === codigosDireccion.IZQUIERDA()){
+    }else if(direccion === codigosDireccion.IZQUIERDA){
         nuevaFilaPiezaVacia = filaVacia;
         nuevaColumnaPiezaVacia = columnaVacia - 1;        
     }
