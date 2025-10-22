@@ -132,12 +132,12 @@ function moverEnDireccion(direccion){
 }
 
 function intercambiarPosiciones(fila1, columna1,fila2, columna2){
-    var pieza1 = rompe[fila1,columna1]
-    var pieza2 = rompe[fila2,columna2]
+    var pieza1 = rompe[fila1][columna1]
+    var pieza2 = rompe[fila2][columna2]
 
     //intercambio ya debe ser en html
-    rompe[fila1,columna1] = pieza2;
-    rompe[fila2,columna2] = pieza1
+    rompe[fila1][columna1] = pieza2;
+    rompe[fila2][columna2] = pieza1
     intercambiarPosicionesRompe(fila1,columna1,fila2,columna2)
     intercambiarPosicionesDOM('pieza'+ pieza1,'pieza' + pieza2);
 
@@ -146,14 +146,14 @@ function intercambiarPosicionesDOM(idPieza1,idPieza2){
     var elementoPieza1  = document.getElementById(idPieza1);
     var elementoPieza2  = document.getElementById(idPieza2);
 
-    var padre = elementoPieza1.parentNode;
+    var padre1 = elementoPieza1.parentNode;
     var clonElemento1 = elementoPieza1.cloneNode(true);
-    var padre = elementoPieza2.parentNode;
+    var padre2 = elementoPieza2.parentNode;
     var clonElemento2 = elementoPieza2.cloneNode(true);
 
     //reemplazar los padres con sus clones
-    padre.replaceChild(clonElemento1,elementoPieza2)
-    padre.replaceChild(clonElemento2,elementoPieza1)
+    padre1.replaceChild(clonElemento2,elementoPieza1)
+    padre2.replaceChild(clonElemento1,elementoPieza2)
 }
 
 //  Debo de actualizar los movimientos en el DOM
