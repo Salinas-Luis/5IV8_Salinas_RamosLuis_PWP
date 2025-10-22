@@ -52,9 +52,9 @@ mostrarInstrucciones(instrucciones);
 //funcion para saber si gano
 function checkwin(){
     for(var j=0; j<rompe.length; j++){
-        for(var k=0; k<rompe[i].length; k++){
-            var rompeActual = rompe[i][j];
-            if(rompeActual !== rompeCorrecta[i][j]){
+        for(var k=0; k<rompe[j].length; k++){
+            var rompeActual = rompe[j][k];
+            if(rompeActual !== rompeCorrecta[j][k]){
                 return false;
             }
         }
