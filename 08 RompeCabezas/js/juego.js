@@ -87,7 +87,7 @@ function intercambiarPosicionesRompe(filaPos1, columnaPos1,filaPos2, columnaPos2
 
 //se encarga de saber donde esta la pieza vacia
 function actualizarPosicionVacia(nuevaFila,nuevaColumna){
-    filaVacia = nuevaVila;
+    filaVacia = nuevaFila;
     columnaVacia = nuevaColumna
 }
 
