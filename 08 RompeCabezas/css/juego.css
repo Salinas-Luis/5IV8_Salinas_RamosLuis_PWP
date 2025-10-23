@@ -177,3 +177,17 @@ li::before {
     background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
     text-decoration: none;
 }
+
+footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+footer a{
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #0091d9;
+    text-decoration: underline;
+}
