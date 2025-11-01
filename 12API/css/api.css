@@ -1,0 +1,42 @@
+html{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background-image: url(../img/1107810.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.container-img {
+    height: 100%;
+}
+.container-img img{
+    height: 50%;
+}
+
+.container-header{
+    font-size: 30px;
+}
+.container-input {
+    height: 100%;
+}
+.container-input input{
+    font-size: 20px;
+}
+.container-input input:focus{
+    font-size: 20px;
+    background: #f2eae6;
+}
+.container-input i{
+    font-size: 22px;
+    height: 100%;
+}

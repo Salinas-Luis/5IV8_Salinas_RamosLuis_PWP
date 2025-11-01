@@ -1,0 +1,1 @@
+const apiURL = "https://genshin.jmp.blue/"
