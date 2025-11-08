@@ -68,7 +68,9 @@ ul{
 }
 
 .container-splash img{
-    width: 250px;
+    width: 300px;
     height: 250px;
-    
+}
+.container-tarjeta img{
+    width: 400px;
 }
