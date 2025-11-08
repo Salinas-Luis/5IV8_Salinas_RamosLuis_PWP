@@ -1,12 +1,10 @@
 const express = require('express');
 const mirrow = require('./endpoint/mirrow');
 
-//vamos a hacer una instancia del servidor
 const app = express();
 const port = 3000;
 
-app.use(express.json()); //middleware para parsear json
-//definimos cada una de las rutas 
+app.use(express.json()); 
 app.get('/', mirrow);
 app.post('/', mirrow);
 app.put('/', mirrow);
