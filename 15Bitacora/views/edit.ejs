@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Ronda ID: <%= ronda.id %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1> Editar Ronda de Inspección #<%= ronda.id %></h1>
+    
+    <form action="/inspecciones/update/<%= ronda.id %>" method="POST">
+        
+        <label for="area_sector">Área/Sector:</label>
+        <input type="text" id="area_sector" name="area_sector" value="<%= ronda.area_sector %>" required>
+        
+        <label for="punto_control">Punto de Control:</label>
+        <input type="text" id="punto_control" name="punto_control" value="<%= ronda.punto_control %>" required>
+        
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+            <option value="OK" <%= ronda.estado === 'OK' ? 'selected' : '' %>>OK</option>
+            <option value="FALLO" <%= ronda.estado === 'FALLO' ? 'selected' : '' %>>FALLO</option>
+        </select>
+        
+        <label for="observaciones">Observaciones (detalles de fallos, ruidos, etc.):</label>
+        <textarea id="observaciones" name="observaciones"><%= ronda.observaciones %></textarea>
+        
+        <label for="seguimiento_req">¿Requiere Seguimiento/OT?</label>
+        <input type="checkbox" id="seguimiento_req" name="seguimiento_req" value="1" <%= ronda.seguimiento_req ? 'checked' : '' %>>
+        
+        <label for="inspector">Inspector/Operador:</label>
+        <input type="text" id="inspector" name="inspector" value="<%= ronda.inspector %>" required>
+        
+        <button type="submit">Actualizar Ronda</button>
+        <a href="/">Cancelar y Volver a la Lista</a>
+    </form>
+</body>
+</html>

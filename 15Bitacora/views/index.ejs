@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Rondas de Inspección</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <h1> Registro de Nueva Ronda de Inspección</h1>
+    
+    <form action="/inspecciones" method="POST">
+        
+        <label for="area_sector">Área/Sector:</label>
+        <input type="text" id="area_sector" name="area_sector" required>
+        
+        <label for="punto_control">Punto de Control:</label>
+        <input type="text" id="punto_control" name="punto_control" required>
+        
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+            <option value="OK">OK</option>
+            <option value="FALLO">FALLO</option>
+        </select>
+        
+        <label for="observaciones">Observaciones (detalles de fallos, ruidos, etc.):</label>
+        <textarea id="observaciones" name="observaciones"></textarea>
+        
+        <label for="seguimiento_req">¿Requiere Seguimiento/OT?</label>
+        <input type="checkbox" id="seguimiento_req" name="seguimiento_req" value="1">
+        
+        <label for="inspector">Inspector/Operador:</label>
+        <input type="text" id="inspector" name="inspector" required>
+        
+        <button type="submit">Registrar Ronda</button>
+    </form>
+
+    <hr>
+
+    <h2> Historial de Rondas Registradas</h2>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha/Hora</th>
+                <th>Área</th>
+                <th>Punto de Control</th>
+                <th>Estado</th>
+                <th>Observaciones</th>
+                <th>Seguimiento</th>
+                <th>Inspector</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% rondas.forEach(function(ronda) { %>
+                <tr>
+                    <td><%= ronda.id %></td>
+                    <td><%= new Date(ronda.fecha_hora).toLocaleString('es-ES') %></td>
+                    <td><%= ronda.area_sector %></td>
+                    <td><%= ronda.punto_control %></td>
+                    <td <%= ronda.estado === 'FALLO' ? 'style="color: red;"' : 'style="color: green;"' %>><%= ronda.estado %> </td>
+                    <td><%= ronda.observaciones %></td>
+                    <td><%= ronda.seguimiento_req ? 'Sí' : 'No' %></td>
+                    <td><%= ronda.inspector %></td>
+                    <td>
+                        <a href="/inspecciones/edit/<%= ronda.id %>">Editar</a> |
+                        <a href="/inspecciones/delete/<%= ronda.id %>" onclick="return confirm('¿Seguro que deseas eliminar esta ronda?');">Eliminar</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+    <% if (rondas.length === 0) { %>
+        <p>No se encontraron rondas de inspección registradas.</p>
+    <% } %>
+</body>
+</html>
