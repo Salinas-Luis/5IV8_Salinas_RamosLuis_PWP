@@ -1,0 +1,25 @@
+body{
+    background-color: #f2eae6;
+}
+h1{
+    text-align: center;  
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input,label{
+    margin: 5px;
+    padding: 2px;
+}
+button{
+    margin-top: 5px;
+}
+ul{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
