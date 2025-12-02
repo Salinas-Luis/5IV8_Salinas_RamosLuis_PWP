@@ -1,0 +1,20 @@
+import express from 'express';
+import path from 'path';
+
+//aqui nosotros tenemos que agregar las rutas, que se van a consumir 
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+const __dirname = path.resolve();
+
+app.use(express.urlencoded({extended : true})) //codificamos la url para poder identificar, para saber a que url ir de cual servidor (que estamos enviando)
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '../Frontend' ,'public')))
+
+app.set('views engine', 'ejs');
+app.set ('public', path.join(__dirname, '../Frontend', 'public'));
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`)
+})
