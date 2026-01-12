@@ -1,0 +1,182 @@
+/* --- Estilos Globales Minimalistas --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido horizontalmente */
+    background-color: #fcfcfc; /* Blanco humo muy limpio */
+    color: #2d3436;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: #1e272e;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.status-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 40px;
+}
+
+#message {
+    height: 25px;
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* --- Contenedor del Tablero --- */
+#ultimate-board {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    background-color: #e2e8f0; /* Color suave para las rejillas principales */
+    padding: 12px;
+    border-radius: 16px;
+    width: 450px;
+    height: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Mini Tableros --- */
+.mini-board {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+/* Resaltado del tablero donde toca jugar */
+.mini-board.active {
+    box-shadow: 0 0 0 4px #3498db;
+    z-index: 1;
+}
+
+/* --- Celdas --- */
+.cell {
+    border: 0.5px solid #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.cell:hover.playable {
+    background-color: #f8fafc;
+}
+
+.cell.x { color: #e74c3c; font-weight: 700; }
+.cell.o { color: #3498db; font-weight: 700; }
+
+/* --- Ganadores de Mini Tableros --- */
+.mini-board.won::after {
+    content: attr(data-winner);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 800;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+}
+
+.mini-board.won-x::after { color: rgba(231, 76, 60, 0.8); }
+.mini-board.won-o::after { color: rgba(52, 152, 219, 0.8); }
+
+/* --- BOTÓN DE REINICIO CENTRADO --- */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Esto coloca el botón justo al centro */
+    margin-top: 30px;
+}
+
+#reset-button {
+    padding: 12px 45px;
+    background-color: #1e272e;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Estilo cápsula */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#reset-button:hover {
+    background-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+}
+
+#reset-button:active {
+    transform: translateY(0);
+}
+
+/* --- Historial de Ganadores --- */
+.score-section {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.score-section h2 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+th, td {
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+th {
+    background-color: #f8fafc;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td {
+    color: #334155;
+}

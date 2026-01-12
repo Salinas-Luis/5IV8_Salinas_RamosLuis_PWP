@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/css/gatodegatos.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Gato de Gatos</h1>
+        
+        <div class="status-info">
+            <p>Turno de: <span id="current-player">X</span></p>
+            <div id="message"></div>
+        </div>
+        
+        <div id="ultimate-board"></div>
+
+        <div class="button-container">
+            <button id="reset-button">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <div class="score-section">
+        <h2>Historial de Ganadores</h2>
+        
+        <% if (typeof dbError !== 'undefined' && dbError) { %>
+            <p class="error">Error al conectar con la base de datos.</p>
+        <% } %>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Ganador</th>
+                    <th>Fecha y Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (scores && scores.length > 0) { %>
+                    <% scores.forEach(score => { %>
+                        <tr>
+                            <td><%= score.ganador %></td>
+                            <td><%= score.fecha_formato %></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="2">No hay partidas registradas aún.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/js/gatodegatos.js"></script>
+</body>
+</html>
