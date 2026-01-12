@@ -33,13 +33,13 @@ h1 {
     font-weight: 500;
 }
 
-/* --- Contenedor del Tablero --- */
+
 #ultimate-board {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 12px;
-    background-color: #e2e8f0; /* Color suave para las rejillas principales */
+    background-color: #e2e8f0; 
     padding: 12px;
     border-radius: 16px;
     width: 450px;
@@ -47,7 +47,6 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Mini Tableros --- */
 .mini-board {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
@@ -59,13 +58,11 @@ h1 {
     transition: all 0.2s ease;
 }
 
-/* Resaltado del tablero donde toca jugar */
 .mini-board.active {
     box-shadow: 0 0 0 4px #3498db;
     z-index: 1;
 }
 
-/* --- Celdas --- */
 .cell {
     border: 0.5px solid #f1f5f9;
     display: flex;
@@ -84,7 +81,6 @@ h1 {
 .cell.x { color: #e74c3c; font-weight: 700; }
 .cell.o { color: #3498db; font-weight: 700; }
 
-/* --- Ganadores de Mini Tableros --- */
 .mini-board.won::after {
     content: attr(data-winner);
     position: absolute;
@@ -101,11 +97,10 @@ h1 {
 .mini-board.won-x::after { color: rgba(231, 76, 60, 0.8); }
 .mini-board.won-o::after { color: rgba(52, 152, 219, 0.8); }
 
-/* --- BOTÓN DE REINICIO CENTRADO --- */
 .button-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Esto coloca el botón justo al centro */
+    justify-content: center; 
     margin-top: 30px;
 }
 
@@ -114,7 +109,7 @@ h1 {
     background-color: #1e272e;
     color: white;
     border: none;
-    border-radius: 50px; /* Estilo cápsula */
+    border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -132,7 +127,6 @@ h1 {
     transform: translateY(0);
 }
 
-/* --- Historial de Ganadores --- */
 .score-section {
     margin-top: 50px;
     width: 100%;

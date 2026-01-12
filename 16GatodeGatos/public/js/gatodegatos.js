@@ -84,7 +84,6 @@ const handleCellClick = (event) => {
 
     if (board[miniIndex][cellIndex] !== "") return;
 
-    // Registrar movimiento
     board[miniIndex][cellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
     clickedCell.classList.add(currentPlayer.toLowerCase());
